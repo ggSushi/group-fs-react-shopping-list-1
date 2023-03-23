@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from '../Header/Header.jsx'
-import AddItem from '../AddItem/AddItem.jsx';
+import AddItem from '../ShoppingList/ShoppingForm.jsx';
 import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import './App.css';
 
@@ -11,7 +11,6 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <p>Under Construction...</p>
                 <AddItem />
                 <ShoppingList />
             </main>

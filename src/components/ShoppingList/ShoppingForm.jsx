@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function AddItem() {
+function ShoppingForm() {
     return (
         <div>
             <h2>Add Item</h2>
@@ -10,9 +10,12 @@ function AddItem() {
             Quantity: <input type="number"></input>
             <br />
             Unit: <input type="text"></input>
+            <br />
+            <br />
+            <button>Save</button>
         </div>
     )
 }
 
 
-export default AddItem;
+export default ShoppingForm;

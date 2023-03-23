@@ -27,6 +27,11 @@ router.post('/', (req, res) => {
     })
 });
 
+// PUT
+
+// DELETE
+router.delete
+
 
 
 module.exports = router;

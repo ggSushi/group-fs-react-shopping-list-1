@@ -24,7 +24,7 @@ function ShoppingList() {
     }, []);
 
     const addItem = (event) => {
-        event.preventDeafault();
+        event.preventDefault();
         
         axios.post('/list', {
             name: itemName,
@@ -52,9 +52,11 @@ function ShoppingList() {
                         <li key={item.id}>
                             {item.name}
                             <br />
-                            {item.quantity}
+                            {item.quantity} {item.unit}
                             <br />
-                            {item.unit}
+                            <button>Buy</button><button>Remove</button>
+                            <br />
+                            <br />
                         </li>
 
                     ))
