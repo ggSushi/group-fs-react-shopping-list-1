@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import ShoppingForm from './ShoppingForm.jsx';
+import ShoppingItem from './ShoppingItem.jsx'
 
 
 
@@ -23,25 +25,21 @@ function ShoppingList() {
         fetchItemList();
     }, []);
 
-    const addItem = (event) => {
-        event.preventDefault();
-        
-        axios.post('/list', {
-            name: itemName,
-            quantity: itemQuant,
-            unit: itemUnit
-        }).then((response) => {
-            setItemName('');
-            setItemQuant('');
-            setItemUnit('');
-            fetchItemList();
-        }).catch((error) => {
-            console.log(`Error in POST ${error}`);
-            alert('GobbledeMessedup, my guy');
-        })
-    }
-
     return (
+        <>
+
+        <ShoppingForm 
+            itemName={itemName}
+            setItemName={setItemName}
+            itemQuant={itemQuant}
+            setItemQuant={setItemQuant}
+            itemUnit={itemUnit}
+            setItemUnit={setItemUnit}
+            itemArray={itemArray}
+            setItemArray={setItemArray}
+            fetchItemList={fetchItemList}
+        />
+
         <div>
             <h1>Shopping List</h1>
             <button >Clear</button>
@@ -49,20 +47,18 @@ function ShoppingList() {
             <ul>
                 {
                     itemArray.map((item) => (
-                        <li key={item.id}>
-                            {item.name}
-                            <br />
-                            {item.quantity} {item.unit}
-                            <br />
-                            <button>Buy</button><button>Remove</button>
-                            <br />
-                            <br />
-                        </li>
+                        <ShoppingItem 
+                            key={item.id}
+                            item={item}
+                            fetchItemList={fetchItemList}
+                        
+                        />
 
                     ))
                 }
             </ul>
         </div>
+        </>
     )
 
 }
