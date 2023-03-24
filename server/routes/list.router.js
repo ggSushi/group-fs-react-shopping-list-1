@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
+// GET
 router.get('/', (req, res) => {
     console.log(`Get Request made`);
     let queryText = 'Select * from list ORDER BY purchased, name;';
@@ -14,6 +15,7 @@ router.get('/', (req, res) => {
     })
 });
 
+// POST
 router.post('/', (req, res) => {
     console.log(`POST`, req.body);
     let queryText = `Insert Into list ("name", "quantity", "unit")
@@ -53,8 +55,5 @@ router.delete('/:id', (req,res) => {
         res.sendStatus(500);
     })
 });
-
-
-
 
 module.exports = router;

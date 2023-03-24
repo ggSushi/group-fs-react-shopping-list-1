@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 //Router added
 const listRouter = require('./routes/list.router.js');
+const listRouter2 = require('./routes/list2.router.js');
 const PORT = process.env.PORT || 5001;
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -13,6 +14,7 @@ app.use(express.static('build'));
 // Create your API routes in a separate file
 // and plug them in here with `app.use()`
 app.use('/list', listRouter);
+app.use('/list2', listRouter2);
 
 
 /** ---------- START SERVER ---------- **/

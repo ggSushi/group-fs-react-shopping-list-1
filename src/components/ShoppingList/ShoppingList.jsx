@@ -25,6 +25,28 @@ function ShoppingList() {
         fetchItemList();
     }, []);
 
+    // Function to delete all from database
+    const clearAll = () => {
+        axios.delete( `/list2` ).then((response) => {
+            fetchItemList();
+        }).catch((error) => {
+            console.log( `Error in DELETE list2 ${error}` );
+            alert( 'Something went wrong! Better delete yourself' );
+        })
+    }
+
+
+    // Function to reset purchase status of all items
+    const resetAll = () => {
+        axios.put( '/list2' ).then((response) => {
+            fetchItemList();
+        }).catch((error) => {
+            console.log(`Error in list2 PUT ${error}`);
+            alert(`Yo, dawg. You PUT things in wrong`);
+        })
+    };
+
+
     return (
         <>
 
@@ -42,8 +64,8 @@ function ShoppingList() {
 
         <div>
             <h1>Shopping List</h1>
-            <button >Clear</button>
-            <button >Reset</button>
+            <button onClick={clearAll} >Clear</button>
+            <button onClick={resetAll}>Reset</button>
             <ul>
                 {
                     itemArray.map((item) => (
