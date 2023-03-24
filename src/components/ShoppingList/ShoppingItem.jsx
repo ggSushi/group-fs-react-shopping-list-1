@@ -3,6 +3,7 @@ import axios from 'axios';
 function ShoppingItem ({ item, fetchItemList }) {
 
     const removeItem = (event) => {
+        console.log( `removeItem ${item.id}` );
         axios.delete(`/list/${item.id}`).then((response) => {
             fetchItemList();
         }).catch((error) => {
