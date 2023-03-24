@@ -24,15 +24,18 @@ function ShoppingItem ({ item, fetchItemList }) {
 
     return (
         <div className="contentDiv">
-        <li className="listItem" key={item.id}>
-            < br/>
-            < br/>
-            {item.name}
-            <br />
-            {item.quantity} {item.unit}
-            <br />
-            <button onClick={ (event) => purchaseItem(event) }>{item.purchased}</button><button onClick={ (event) => removeItem(event) }>Remove</button>
-        </li>
+            <div className="listItem" key={item.id}>
+                < br/>
+                < br/>
+                {item.name}
+                <br />
+                <br />
+                {item.quantity} {item.unit}
+                <br />
+                <br />
+                <button className="buy-button" onClick={ (event) => purchaseItem(event) }>{item.purchased}</button>
+                <button className="remove-button"onClick={ (event) => removeItem(event) }>Remove</button>
+            </div>
         </div>
     )
 }

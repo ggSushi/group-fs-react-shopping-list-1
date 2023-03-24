@@ -1,5 +1,5 @@
 .listItem {
-    border: 1px solid black;
+    border: 2px solid rgb(194, 194, 194);
     border-radius: 5px;
     width: 150px;
     height: 150px;
@@ -10,5 +10,16 @@
     display: flex;
     flex-direction: row;
 
+}
 
+.itemGrid {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 50px;
+    row-gap: 50px;
+    margin-top: 20px;
+}
+
+.buy-button {
+    margin-right: 7px;
 }
