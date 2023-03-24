@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 function ShoppingItem ({ item, fetchItemList }) {
 
     const removeItem = (event) => {
@@ -22,17 +23,17 @@ function ShoppingItem ({ item, fetchItemList }) {
     }
 
     return (
-        <>
-        <li key={item.id}>
+        <div className="contentDiv">
+        <li className="listItem" key={item.id}>
+            < br/>
+            < br/>
             {item.name}
             <br />
             {item.quantity} {item.unit}
             <br />
             <button onClick={ (event) => purchaseItem(event) }>{item.purchased}</button><button onClick={ (event) => removeItem(event) }>Remove</button>
-            <br />
-            <br />
         </li>
-        </>
+        </div>
     )
 }
 

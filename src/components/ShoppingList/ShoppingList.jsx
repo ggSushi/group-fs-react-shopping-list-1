@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import ShoppingForm from './ShoppingForm.jsx';
-import ShoppingItem from './ShoppingItem.jsx'
+import ShoppingItem from './ShoppingItem.jsx';
+import './ShoppingList.css';
 
 
 
@@ -66,19 +67,19 @@ function ShoppingList() {
             <h1>Shopping List</h1>
             <button onClick={clearAll} >Clear</button>
             <button onClick={resetAll}>Reset</button>
-            <ul>
-                {
-                    itemArray.map((item) => (
-                        <ShoppingItem 
-                            key={item.id}
-                            item={item}
-                            fetchItemList={fetchItemList}
-                        
-                        />
+                <ul>
+                    {
+                        itemArray.map((item) => (
+                            <ShoppingItem 
+                                key={item.id}
+                                item={item}
+                                fetchItemList={fetchItemList}
+                            
+                            />
 
-                    ))
-                }
-            </ul>
+                        ))
+                    }
+                </ul>
         </div>
         </>
     )

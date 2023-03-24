@@ -16,7 +16,7 @@ router2.put('/', (req, res) => {
 
 // DELETE
 router2.delete('/', (req,res) => {
-    let queryText = 'DELETE FROM "list";';
+    let queryText = 'DELETE FROM "list2";';
     pool.query(queryText).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {

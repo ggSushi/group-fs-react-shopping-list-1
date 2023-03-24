@@ -1,0 +1,14 @@
+.listItem {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+
+.contentDiv {
+    display: flex;
+    flex-direction: row;
+
+
+}
