@@ -4,7 +4,7 @@ const pool = require('../modules/pool.js');
 
 router.get('/', (req, res) => {
     console.log(`Get Request made`);
-    let queryText = 'Select * from list;';
+    let queryText = 'Select * from list ORDER BY purchased, name;';
 
     pool.query(queryText).then((result) => {
         res.send(result.rows);
@@ -28,7 +28,17 @@ router.post('/', (req, res) => {
 });
 
 // PUT
+router.put('/:id', (req, res) => {
+    console.log( `In PUT request /list` );
+    let itemId = req.params.id;
+    let queryText = 'UPDATE "list" SET "purchased" = $1 WHERE "id" = $2;';
 
+    pool.query(queryText, [ 'Purchased', itemId ]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log( `Error in PUT ${error}`)
+    })
+})
 
 
 // DELETE

@@ -12,6 +12,15 @@ function ShoppingItem ({ item, fetchItemList }) {
         })
     }
 
+    const purchaseItem = (event) => {
+        axios.put( `/list/${item.id}` ).then((response) => {
+            fetchItemList();
+        }).catch((error) => {
+            console.log( `Error PUT ${error}` );
+            alert( 'Something went wrong' );
+        })
+    }
+
     return (
         <>
         <li key={item.id}>
@@ -19,7 +28,7 @@ function ShoppingItem ({ item, fetchItemList }) {
             <br />
             {item.quantity} {item.unit}
             <br />
-            <button>Buy</button><button onClick={ (event) => removeItem(event) }>Remove</button>
+            <button onClick={ (event) => purchaseItem(event) }>{item.purchased}</button><button onClick={ (event) => removeItem(event) }>Remove</button>
             <br />
             <br />
         </li>

@@ -1,11 +1,11 @@
 -- Don't forget to add your create table SQL 
 CREATE TABLE "list" (
 	"id" SERIAL PRIMARY KEY,
-	"name" varchar(50) not null,
-	"quantity" integer not null,
-	"unit" varchar(50)
+	"name" varchar(50) NOT NULL,
+	"quantity" varchar NOT NULL,
+	"unit" varchar,
+	"purchased" varchar DEFAULT 'Buy'
 );
-
 
 -- It is also helpful to include some test data
 
