@@ -26,11 +26,11 @@ function ShoppingForm({ itemName, setItemName, itemQuant, setItemQuant, itemUnit
         <form onSubmit={addItem}>
             <h2>Add Item</h2>
             <br />
-            Item: <input id="item-input" type="text" />
+            Item: <input type="text" onChange={e => setItemName(e.target.value)} />
             <br />
-            Quantity: <input id="quantity-input" type="number" />
+            Quantity: <input type="number" onChange={e => setItemQuant(e.target.value)} />
             <br />
-            Unit: <input id="unit-input" type="text" />
+            Unit: <input type="text" onChange={(e) => setItemUnit(e.target.value)} />
             <br />
             <br />
             <button >Save</button>
